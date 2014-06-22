@@ -39,7 +39,11 @@ predata3 <- predata2[-2]
 predata4 <- predata3[c(1,563,2:562)]
 names(predata4)[2] <- "activity"
 
-data<- predata4[,grep("(std|mean)",names(predata4))]
+data<- predata4[,c(1:2,grep("(std|mean)",names(predata4)))]
+
 rm(list=c("act_names","predata1","predata2","predata3","i","predata4"))
 
 write.csv(data,file="data.csv")
+
+
+
